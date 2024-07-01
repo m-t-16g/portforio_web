@@ -1,17 +1,21 @@
-import { useState } from "react";
 import "./App.css";
-import Contents from "./components/Contents";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
+import Products from "./components/Products";
+import Skills from "./components/Skills";
+import Others from "./components/Others";
+import TopPage from "./components/TopPage";
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
-        <>
+        <BrowserRouter>
             <Header></Header>
-            <Contents></Contents>
-            <Nav></Nav>
-        </>
+            <Routes>
+                <Route path='/' element={<TopPage />} />
+                <Route path='/products' element={<Products />} />
+                <Route path='/skills' element={<Skills />} />
+                <Route path='/others' element={<Others />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
