@@ -1,31 +1,31 @@
 import { Link } from "react-router-dom";
 
 const Header = () => {
+    const listStyle = {
+        red: "py-1 px-2  border-l-4  border-b-transparent border-b-2 border-l-red-600  hover:font-bold hover:border-b-red-600 transition",
+        amber: "py-1 px-2  border-l-4  border-b-transparent border-b-2 border-l-amber-600  hover:font-bold hover:border-b-amber-600 transition",
+        lime: "py-1 px-2  border-l-4  border-b-transparent border-b-2 border-l-lime-600  hover:font-bold hover:border-b-lime-600 transition",
+        emerald:
+            "py-1 px-2  border-l-4  hover:border-b-2 border-l-emerald-600  hover:font-bold hover:border-b-emerald-600 transition",
+    };
     return (
         <>
             <header className='ml-auto mr-auto py-3 bg-slate-100 bg-opacity-50'>
                 <nav>
-                    <ul className='grid grid-cols-6 ml-auto mr-auto max-w-[1280px]  text-gray-800 '>
+                    <ul className='grid grid-cols-6 ml-auto mr-auto max-w-[1280px] px-4 text-gray-800 gap-2'>
                         <Link to='/'>
-                            <li className='py-1 px-1  border-b-2 border-transparent  hover:font-bold hover:border-gray-400'>
-                                トップ
-                            </li>
+                            <li className={listStyle.red}>トップ</li>
                         </Link>
                         <Link to='products'>
-                            <li className='py-1 px-1 border-b-2 border-transparent  hover:font-bold hover:border-gray-400'>
-                                制作物
-                            </li>
+                            <li className={listStyle.amber}>制作物</li>
                         </Link>
                         <Link to='skills'>
-                            <li className='py-1 px-1 border-b-2 hover:font-bold border-transparent hover:border-gray-400'>
-                                技術
-                            </li>
+                            <li className={listStyle.lime}>技術</li>
                         </Link>
                         <Link to='others'>
-                            <li className='py-1 px-1 border-b-2 hover:font-bold border-transparent hover:border-gray-400'>
-                                その他
-                            </li>
+                            <li className={listStyle.emerald}>その他</li>
                         </Link>
+                        <li className='col-start-6 col-end-7'>icon</li>
                     </ul>
                 </nav>
             </header>

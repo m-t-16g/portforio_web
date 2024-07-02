@@ -8,13 +8,15 @@ import TopPage from "./components/TopPage";
 function App() {
     return (
         <BrowserRouter>
-            <Header></Header>
-            <Routes>
-                <Route path='/' element={<TopPage />} />
-                <Route path='/products' element={<Products />} />
-                <Route path='/skills' element={<Skills />} />
-                <Route path='/others' element={<Others />} />
-            </Routes>
+            <div className='h-svh'>
+                <Header />
+                <Routes>
+                    <Route path='/' element={<TopPage />} />
+                    <Route path='/products' element={<Products />} />
+                    <Route path='/skills' element={<Skills />} />
+                    <Route path='/others' element={<Others />} />
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 }
