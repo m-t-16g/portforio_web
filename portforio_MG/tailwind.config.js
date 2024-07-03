@@ -6,6 +6,8 @@ module.exports = {
             animation: {
                 "slide-in-right":
                     "slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
+                "button-hover":
+                    "button-hover 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
             },
             keyframes: {
                 "slide-in-right": {
@@ -15,6 +17,16 @@ module.exports = {
                     },
                     to: {
                         transform: "translateX(0)",
+                        opacity: "1",
+                    },
+                },
+                "button-hover": {
+                    "0%": {
+                        transform: "translate(0)",
+                        opacity: "0",
+                    },
+                    to: {
+                        transform: "translate(-0.25rem,-0.25rem)",
                         opacity: "1",
                     },
                 },

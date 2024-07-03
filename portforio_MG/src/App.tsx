@@ -8,7 +8,7 @@ import TopPage from "./components/TopPage";
 function App() {
     return (
         <BrowserRouter>
-            <div className='h-svh'>
+            <div className='md:h-svh '>
                 <Header />
                 <Routes>
                     <Route path='/' element={<TopPage />} />

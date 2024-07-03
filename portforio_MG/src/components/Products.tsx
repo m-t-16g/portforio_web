@@ -1,12 +1,28 @@
 import Btn from "./Btn";
 import Data from "../components/data/products.json";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import ProductThumb from "./ProductThumb";
 const Products = () => {
     const data = [...Data.products].reverse();
     const [Select, setSelect] = useState(data[0]);
     const [Fade, setFade] = useState(false);
-    const changeSelect = (newData) => {
+    const changeSelect = (
+        newData: SetStateAction<{
+            date: string;
+            title: string;
+            thumb: string;
+            genre: string;
+            html: boolean;
+            css: boolean;
+            javascript: boolean;
+            php: boolean;
+            description: string;
+            comment: string;
+            rule: string;
+            link: string;
+            source: string;
+        }>
+    ) => {
         if (Select !== newData) {
             setFade(true);
             setTimeout(() => {
@@ -17,6 +33,7 @@ const Products = () => {
             }, 150);
         }
     };
+
     return (
         <section className='grid max-h-full h-5/6 w-full py-12 px-4 lg:px-10  grid-cols-12 grid-rows-12 '>
             <div className='col-span-4 col-start-1 row-span-8 row-start-1 bg-red-300'>
@@ -46,7 +63,7 @@ const Products = () => {
                     <Btn name='サンプル' />
                 </a>
             </div>
-            <div className='cols-start-5 col-span-7 row-start-1 row-span-2 flex items-end px-3 py-1 text-3xl border-l-8 border-slate-700'>
+            <div className='cols-start-5 col-span-7 row-start-1 row-span-2 flex items-end px-3 ml-2 py-1 pb-4 text-3xl border-l-8 border-slate-700'>
                 <p
                     style={
                         Fade
@@ -66,12 +83,13 @@ const Products = () => {
                     {Select.title}
                 </p>
             </div>
-            <div className='pl-2 col-start-5 col-span-8 row-start-3 row-span-10 grid grid-cols-3 grid-rows-3 gap-2'>
+            <div className='pl-2 col-start-5 col-span-8 row-start-3 row-span-10 grid grid-cols-3 grid-rows-3 gap-0'>
                 {data.map((data, index) => (
                     <ProductThumb
                         data={data}
                         key={index}
                         changeSelect={changeSelect}
+                        guide={data == Select ? true : false}
                     />
                 ))}
             </div>

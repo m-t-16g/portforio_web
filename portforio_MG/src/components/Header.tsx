@@ -25,7 +25,7 @@ const Header = () => {
                         <Link to='others'>
                             <li className={listStyle.emerald}>その他</li>
                         </Link>
-                        <li className='col-start-6 col-end-7'>icon</li>
+                        {/* <li className='col-start-6 col-end-7'>icon</li> */}
                     </ul>
                 </nav>
             </header>

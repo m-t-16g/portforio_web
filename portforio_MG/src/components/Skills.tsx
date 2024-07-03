@@ -1,4 +1,33 @@
 const Skills = () => {
+    const qualification: Array<string> = ["基本情報技術者"];
+    const language = [
+        {
+            lang: "HTML/CSS",
+            learning: 7,
+            career: 0,
+            description: "デザインの忠実な再現が可能です。",
+        },
+        {
+            lang: "javascript",
+            learning: 6,
+            career: 0,
+            description: "React Vue 等のフレームワークの知識があります。",
+        },
+        {
+            lang: "php",
+            learning: 4,
+            career: 0,
+            description:
+                "フォーム、ログイン、データベース連携等の知識があります",
+        },
+        {
+            lang: "その他",
+            learning: 0,
+            career: 0,
+            description:
+                "Linuxコンソール、シェルスクリプト、SQLの知識があります",
+        },
+    ];
     return (
         <section className='grid max-h-full h-5/6 w-full py-12 px-4 gap-1 lg:px-10  grid-cols-12 grid-rows-12'>
             <div className='col-start-2 col-span-4'>
@@ -6,87 +35,68 @@ const Skills = () => {
                     習得技術
                 </h3>
             </div>
-            <ul className='row-start-3 row-span-full col-span-4 bg-red-100 p-2 m-2'>
-                <li
-                    className=' text-lg py-1 pl-1 pr-3 mb-2 w-fit'
+            <div className='row-start-3 row-span-full col-span-3 bg-red-100 p-2 m-2'>
+                <h3
+                    className=' text-lg py-1 pl-1 pr-3 mb-2 w-fit font-bold'
                     style={{
                         background:
                             "linear-gradient(transparent 70%, rgba(220, 38, 38,0.3) 30%)",
                     }}
                 >
                     資格
-                </li>
-                <li
-                    className='w-full py-1'
-                    style={{
-                        background: "rgba(255,255,255,0.8)",
-                    }}
-                >
-                    基本情報技術者
-                </li>
-            </ul>
-            <ul className='row-start-3 row-span-full col-span-8 bg-amber-100 p-2 m-2'>
-                <li
-                    className='text-lg py-1 pl-1 pr-3 mb-2 w-fit'
+                </h3>
+                <ul>
+                    {qualification.map((value, index) => (
+                        <li
+                            className='w-full py-1 px-4 mb-1 bg-white/80'
+                            key={index}
+                        >
+                            {value}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className='row-start-3 row-span-full col-span-9 bg-amber-100 p-2 m-2'>
+                <h3
+                    className='text-lg py-1 pl-1 pr-3 mb-2 w-fit font-bold'
                     style={{
                         background:
                             "linear-gradient(transparent 70%, rgba(217, 119, 6,0.3) 30%)",
                     }}
                 >
                     言語
-                </li>
-                <li
-                    className='w-full p-1 my-1'
-                    style={{
-                        background: "rgba(255,255,255,0.8)",
-                    }}
-                >
-                    <p>HTML/CSS</p>
-                    <p className='text-xs'>
-                        学習期間5ヶ月
-                        <br />
-                        デザインの忠実な再現が可能です。
-                    </p>
-                </li>
-                <li
-                    className='w-full p-1 my-1'
-                    style={{
-                        background: "rgba(255,255,255,0.8)",
-                    }}
-                >
-                    <p>javascript</p>
-                    <p className='text-xs'>
-                        学習期間7ヶ月
-                        <br />
-                        Vue React jQuerry
-                        といったフレームワークの知識があります。
-                    </p>
-                </li>
-                <li
-                    className='w-full p-1 my-1'
-                    style={{
-                        background: "rgba(255,255,255,0.8)",
-                    }}
-                >
-                    <p>php</p>
-                    <p className='text-xs'>
-                        学習期間4ヶ月
-                        <br />
-                        フォーム、ログイン、データベース連携等の知識があります。
-                    </p>
-                </li>
-                <li
-                    className='w-full p-1 my-1'
-                    style={{
-                        background: "rgba(255,255,255,0.8)",
-                    }}
-                >
-                    <p>その他</p>
-                    <p className='text-xs'>
-                        SQL シェルスクリプト等の知識があります。
-                    </p>
-                </li>
-            </ul>
+                </h3>
+                <ul className='grid grid-cols-2 gap-1.5'>
+                    {language.map((item, index) => (
+                        <li className='p-1 my-1 bg-white/80' key={index}>
+                            <p
+                                className='px-2 font-semibold mb-2 w-fit'
+                                style={{
+                                    background:
+                                        "linear-gradient(transparent 70%, rgba(217, 119, 6,0.3) 30%)",
+                                }}
+                            >
+                                {item.lang}
+                            </p>
+                            {item.career != 0 ? (
+                                <p className='pl-4 text-xs mb-1'>
+                                    実務経験{item.learning}ヶ月
+                                </p>
+                            ) : (
+                                item.learning != 0 && (
+                                    <p className='pl-4 text-xs mb-1'>
+                                        学習期間{item.learning}ヶ月
+                                    </p>
+                                )
+                            )}
+
+                            <p className='text-xs px-4 text-justify mb-1'>
+                                {item.description}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </section>
     );
 };
