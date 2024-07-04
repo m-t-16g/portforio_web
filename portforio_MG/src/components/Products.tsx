@@ -13,13 +13,7 @@ const Products = () => {
             title: string;
             thumb: string;
             genre: string;
-            html: boolean;
-            css: boolean;
-            javascript: boolean;
-            php: boolean;
-            description: string;
             comment: string;
-            rule: string;
             link: string;
             source: string;
         }>

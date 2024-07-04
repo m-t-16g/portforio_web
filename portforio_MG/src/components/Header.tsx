@@ -5,12 +5,15 @@ const Header = () => {
     const lnk = {
         top() {
             nav("/");
+            window.scrollTo({ top: 0, behavior: "smooth" });
         },
         product() {
             nav("/products");
+            window.scrollTo({ top: 0, behavior: "smooth" });
         },
         skill() {
             nav("/skills");
+            window.scrollTo({ top: 0, behavior: "smooth" });
         },
     };
     const listStyle = {
@@ -24,7 +27,7 @@ const Header = () => {
         <>
             <header className='ml-auto mr-auto py-3 bg-slate-100 bg-opacity-50 sticky top-0 hover:bg-opacity-95'>
                 <nav>
-                    <ul className='grid grid-cols-4 md:grid-cols-6 ml-auto mr-auto  xl:w-4/6 px-4 text-gray-800 gap-2'>
+                    <ul className='grid grid-cols-4 md:grid-cols-6 ml-auto mr-auto xl:w-4/6 px-4 text-gray-800 gap-2'>
                         <li className={listStyle.amber} onClick={lnk.product}>
                             制作物
                         </li>
