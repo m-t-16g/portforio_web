@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const nav = useNavigate();
@@ -24,7 +24,7 @@ const Header = () => {
         <>
             <header className='ml-auto mr-auto py-3 bg-slate-100 bg-opacity-50 sticky top-0 hover:bg-opacity-95'>
                 <nav>
-                    <ul className='grid grid-cols-6 ml-auto mr-auto max-w-[1280px] px-4 text-gray-800 gap-2'>
+                    <ul className='grid grid-cols-4 md:grid-cols-6 ml-auto mr-auto  xl:w-4/6 px-4 text-gray-800 gap-2'>
                         <li className={listStyle.amber} onClick={lnk.product}>
                             制作物
                         </li>
@@ -34,7 +34,7 @@ const Header = () => {
                         </li>
 
                         <li
-                            className={`col-start-6 col-end-7 ${listStyle.red}`}
+                            className={`col-start-4 md:col-start-6 col-end-7 ${listStyle.red}`}
                             onClick={lnk.top}
                         >
                             トップ

@@ -40,7 +40,7 @@
             "javascript": true,
             "php": true,
             "description": "phpとデータベースを利用したカレンダーアプリです",
-            "comment": "予定の登録、閲覧の機能を持つカレンダーWebアプリです、データベースを利用し",
+            "comment": "予定の登録、閲覧の機能を持つカレンダーWebアプリです、データベース(MariaDB)を利用しています",
             "rule": "カレンダーの表示、左右ボタンをクリックして月の変更、フィールドをクリックしてデータの登録及び編集",
             "link": "http://mercy2g.starfree.jp/resources/calendar/index.php",
             "source": "https://github.com/m-t-16g/game-app-01"
@@ -48,7 +48,7 @@
         {
             "date": "20240513",
             "title": "タイピングゲーム",
-            "thumb": "img/typinggameThumb.jpg",
+            "thumb": "img/typinggameThumb.png",
             "genre": "webアプリ",
             "html": true,
             "css": true,

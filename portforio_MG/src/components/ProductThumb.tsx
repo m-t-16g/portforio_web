@@ -7,7 +7,7 @@ const ProductThumb = (props) => {
     return (
         <>
             <div
-                className={`w-full h-full border-4 transition hover:border-red-400 mb-1 ${
+                className={`col-span-2 md:col-span-1  w-full h-full border-4 transition hover:border-red-400 mb-1 ${
                     props.guide ? " border-indigo-500" : "border-slate-200"
                 }`}
                 onClick={handleClick}

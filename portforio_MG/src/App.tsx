@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Products from "./components/Products";
 import Skills from "./components/Skills";
 import TopPage from "./components/TopPage";
+import Footer from "./components/Footer";
 function App() {
     return (
         <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
                 <Route path='/products' element={<Products />} />
                 <Route path='/skills' element={<Skills />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     );
 }
